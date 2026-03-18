@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dpd0unlkl3jvy"]
+
+[ext_resource type="PackedScene" uid="uid://p4y5c0vsifw5" path="res://Cenas/animatable_body_3d.tscn" id="1_s235e"]
+
+[sub_resource type="Curve3D" id="Curve3D_q0b27"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Plataforma" type="Node3D" unique_id=462228246]
+
+[node name="Plataforma_movel" parent="." unique_id=371520106 node_paths=PackedStringArray("PathFollow", "oi") instance=ExtResource("1_s235e")]
+transform = Transform3D(1, -3.5527137e-15, -3.5527137e-15, 0, 1, 0, -8.3518724e-23, 0, 1, 1.4210855e-14, 0, 0)
+PathFollow = NodePath("../Path3D/PathFollow3D")
+oi = NodePath("../Timer")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=2065695465]
+curve = SubResource("Curve3D_q0b27")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1762805293]
+transform = Transform3D(-4.371139e-08, 0.9999998, -4.371139e-08, 0, -4.371138e-08, -1, -1, -4.371138e-08, 1.9106855e-15, 0, 0, 0)
+loop = false
+
+[node name="Timer" type="Timer" parent="." unique_id=1079370840]
+process_callback = 0
+one_shot = true
+autostart = true

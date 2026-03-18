@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bxhogshm24o6c"]
+
+[ext_resource type="Script" uid="uid://sukqw274ki8o" path="res://area_3d.gd" id="1_qc7i6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dwsfj"]
+size = Vector3(4.5269165, 0.98394775, 4.9459076)
+
+[node name="BuracoMortal" type="Node3D" unique_id=1357681736]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=305733426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32681274, -0.2529297, -0.1510849)
+use_collision = true
+size = Vector3(3.980896, 0.49414063, 4.4834137)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=244469213]
+collision_layer = 2
+collision_mask = 15
+script = ExtResource("1_qc7i6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=106533268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.098968506, -0.008026123, -0.17739105)
+shape = SubResource("BoxShape3D_dwsfj")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

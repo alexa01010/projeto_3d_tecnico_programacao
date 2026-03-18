@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://p4y5c0vsifw5"]
+
+[ext_resource type="Script" uid="uid://p04w487rbelk" path="res://Script/animatable_body_3d.gd" id="1_pxrju"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n4jik"]
+size = Vector3(5, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n4jik"]
+size = Vector3(5, 1, 5)
+
+[node name="Plataforma_movel" type="AnimatableBody3D" unique_id=371520106]
+collision_mask = 15
+script = ExtResource("1_pxrju")
+directionPath = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=238695724]
+mesh = SubResource("BoxMesh_n4jik")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1474476919]
+shape = SubResource("BoxShape3D_n4jik")

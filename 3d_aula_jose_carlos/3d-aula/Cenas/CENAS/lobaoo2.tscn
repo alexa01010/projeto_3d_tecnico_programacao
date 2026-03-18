@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bed6gxkpotyae"]
+
+[ext_resource type="PackedScene" uid="uid://cwpdoh5ulene5" path="res://Lobinho/lobaoo.glb" id="1_uqpd8"]
+
+[node name="lobaoo" unique_id=449791766 instance=ExtResource("1_uqpd8")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1105838230) index="0" unique_id=1704744596]
+bones/1/rotation = Quaternion(0.20217188, -0.12862878, 0.051304176, 0.9695097)
+bones/2/rotation = Quaternion(1.8144124e-06, 0.71063334, 0.70356256, 1.8326472e-06)
+bones/3/rotation = Quaternion(0.41804987, 4.6991246e-09, -2.1674157e-06, 0.90842414)
+bones/4/rotation = Quaternion(-0.39294872, -0.067141965, 0.039014876, 0.91627574)
+bones/5/rotation = Quaternion(0.37560582, 0.61951935, -0.5775225, 0.3762763)
+bones/6/rotation = Quaternion(0.021653686, -0.0031307177, -0.47877982, 0.87766236)
+bones/7/rotation = Quaternion(-0.69279855, 4.540679e-08, 0.0051165847, 0.7211131)
+bones/8/rotation = Quaternion(-0.5385757, -0.46822846, 0.554585, -0.4279415)
+bones/9/rotation = Quaternion(-0.07070398, -0.07480106, -0.5127912, 0.85232097)
+bones/11/rotation = Quaternion(-0.4918781, 0.5226128, -0.48013726, -0.50438094)
+bones/12/rotation = Quaternion(0.022038205, -0.00082314305, 0.5524854, 0.8332308)
+bones/13/rotation = Quaternion(-0.69279855, -6.12138e-08, -0.0051165605, 0.7211131)
+bones/14/rotation = Quaternion(0.42022896, -0.54202574, 0.6503045, 0.32667997)
+bones/15/rotation = Quaternion(-0.07336715, 0.0712644, 0.47362036, 0.8747699)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=834166390]
+autoplay = &"Walk"

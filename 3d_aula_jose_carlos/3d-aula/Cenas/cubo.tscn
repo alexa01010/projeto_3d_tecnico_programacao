@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://mp6kdh0obmp3"]
+
+[ext_resource type="Script" uid="uid://bv3jtijpnr28d" path="res://Cenas/cubo.gd" id="1_npo70"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_iywm3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_npo70"]
+size = Vector3(2.940918, 3.8342285, 4.414917)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1rimc"]
+size = Vector3(3.2436981, 2.2688293, 2.5117188)
+
+[node name="RigidBody3D" type="RigidBody3D" unique_id=1082389431]
+script = ExtResource("1_npo70")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1012667603]
+transform = Transform3D(2.345, 0, 0, 0, 2.345, 0, 0, 0, 2.345, 0, 0, 0)
+mesh = SubResource("BoxMesh_iywm3")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1409227259]
+collision_layer = 4
+collision_mask = 12
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1102661494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11206055, -0.46447754, -0.21051025)
+shape = SubResource("BoxShape3D_npo70")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1832078298]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.040229797, 0.11961365, 0.0703125)
+shape = SubResource("BoxShape3D_1rimc")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

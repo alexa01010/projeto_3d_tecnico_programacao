@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dfe0q00odjjkg"]
+
+[ext_resource type="Script" uid="uid://bskkryfg7vgdb" path="res://fade_in.gd" id="1_rye5i"]
+
+[node name="Fade_in" type="Control" unique_id=1053857177]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rye5i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1541105014]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

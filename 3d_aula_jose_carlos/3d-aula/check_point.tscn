@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cv04vjh5ti34d"]
+
+[ext_resource type="Script" uid="uid://86m56jaov3j" path="res://check_point.gd" id="1_rjssc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v86xw"]
+size = Vector3(2.062729, 1.07724, 1.740365)
+
+[node name="CheckPoint" type="Node3D" unique_id=1692128935 groups=["Persist"]]
+script = ExtResource("1_rjssc")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=220520317]
+collision_layer = 3
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1744420122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12030649, 0.13530481, -0.07152653)
+shape = SubResource("BoxShape3D_v86xw")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=785192512]
+
+[connection signal="body_entered" from="Area3D" to="." method="SetCheckPoint"]

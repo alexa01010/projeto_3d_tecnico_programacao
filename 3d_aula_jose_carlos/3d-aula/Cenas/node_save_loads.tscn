@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b8okpq2tvptfc"]
+
+[ext_resource type="Script" uid="uid://buauaukkd3rij" path="res://Cenas/node_save_loads.gd" id="1_xvpnm"]
+
+[node name="NodeSaveLoads" type="Node" unique_id=2144618380 groups=["persist"]]
+script = ExtResource("1_xvpnm")

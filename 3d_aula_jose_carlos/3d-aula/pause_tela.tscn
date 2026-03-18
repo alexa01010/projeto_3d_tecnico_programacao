@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://hgwim71aurkx"]
+
+[ext_resource type="Script" uid="uid://bamafx7lyst4t" path="res://pause_tela.gd" id="1_wqhrv"]
+
+[node name="pause_tela" type="CanvasLayer" unique_id=478698103]
+process_mode = 3
+script = ExtResource("1_wqhrv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=314644401]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1764706, 0.1764706, 0.1764706, 0.36078432)
+
+[node name="holder" type="VBoxContainer" parent="." unique_id=502425683]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.5
+offset_top = -44.0
+offset_right = 50.752
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.86, 0.86)
+
+[node name="retornar_button" type="Button" parent="holder" unique_id=526667470]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Voltar"
+
+[node name="sair_button" type="Button" parent="holder" unique_id=300037979]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Sair"
+
+[node name="Node3D" type="Node3D" parent="." unique_id=84517828 groups=["player"]]
+
+[connection signal="pressed" from="holder/retornar_button" to="." method="_on_retornar_button_pressed"]
+[connection signal="pressed" from="holder/sair_button" to="." method="_on_sair_button_pressed"]

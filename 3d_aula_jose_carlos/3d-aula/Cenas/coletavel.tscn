@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://bth1n32kmy8x5"]
+
+[ext_resource type="Script" uid="uid://c85rdocd43yg7" path="res://Script/coletavel.gd" id="1_m71mx"]
+[ext_resource type="Texture2D" uid="uid://b7fi525sjd7i3" path="res://Moeda de Ouro/moeda_ouro_1.png" id="1_nkxo6"]
+[ext_resource type="Texture2D" uid="uid://d0268uwqoxhef" path="res://Moeda de Ouro/moeda_ouro_2.png" id="3_upwmr"]
+[ext_resource type="Texture2D" uid="uid://c4jlesfni74pt" path="res://Moeda de Ouro/moeda_ouro_4.png" id="4_3832x"]
+[ext_resource type="Texture2D" uid="uid://djbyxif44tokv" path="res://Moeda de Ouro/moeda_ouro_3.png" id="5_grm1i"]
+[ext_resource type="Script" uid="uid://dmgfa6uuvruer" path="res://Cenas/add_score.gd" id="6_kv1kw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nkxo6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_m71mx"]
+radius = 0.863085
+
+[sub_resource type="Animation" id="Animation_t42cw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_nkxo6")]
+}
+
+[sub_resource type="Animation" id="Animation_kvt2c"]
+resource_name = "moeda"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_nkxo6"), ExtResource("3_upwmr"), ExtResource("5_grm1i"), ExtResource("4_3832x")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x6jp5"]
+_data = {
+&"RESET": SubResource("Animation_t42cw"),
+&"moeda": SubResource("Animation_kvt2c")
+}
+
+[node name="Coletavel" type="RigidBody3D" unique_id=832538565]
+collision_layer = 17
+collision_mask = 9
+script = ExtResource("1_m71mx")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1346518048]
+pixel_size = 0.07
+billboard = 2
+texture_filter = 0
+texture = ExtResource("1_nkxo6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=924444712]
+shape = SubResource("SphereShape3D_nkxo6")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2118323185 groups=["Persist"]]
+collision_layer = 16
+collision_mask = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1592916677]
+shape = SubResource("SphereShape3D_m71mx")
+debug_color = Color(0.6178503, 0.5209043, 0.36301264, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1730652886]
+libraries/ = SubResource("AnimationLibrary_x6jp5")
+autoplay = &"moeda"
+
+[node name="AddScore" type="Node3D" parent="." unique_id=606046372]
+script = ExtResource("6_kv1kw")
+AddValue = 15
+
+[connection signal="coletado" from="." to="AddScore" method="_on_coletavel_coletado"]

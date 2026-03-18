@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bnnmdtrrehjuh"]
+
+[ext_resource type="PackedScene" uid="uid://cxw8d7kcm4xrq" path="res://Modelos3D/hello_kitty2.glb" id="1_roa3c"]
+
+[node name="hello_kitty2" unique_id=1601023964 instance=ExtResource("1_roa3c")]
+
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(688691515) index="0" unique_id=167342548]
+bones/1/rotation = Quaternion(0.7071068, 0, 0, 0.7071068)
+bones/3/position = Vector3(0.6975069, 2.0144408, -0.0058140308)
+bones/3/rotation = Quaternion(5.745166e-07, -1.6573205e-08, 0.9638244, -0.26653844)
+bones/4/position = Vector3(-0.6975069, 2.0144408, -0.0058140308)
+bones/4/rotation = Quaternion(-5.745166e-07, -1.6573205e-08, 0.9638244, 0.26653844)
+
+[node name="AnimationPlayer" parent="." index="1" unique_id=769067241]
+autoplay = &"Idle_001"

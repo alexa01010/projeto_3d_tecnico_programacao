@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://dvd0hm50163ob"]
+
+[ext_resource type="PackedScene" uid="uid://bk5la0gbthjm7" path="res://Cenas/ativar_camera.tscn" id="1_hqyny"]
+[ext_resource type="Texture2D" uid="uid://d6iqi6lsfx3h" path="res://Tiles014_1K-PNG/Tiles014_1K-PNG_Color.png" id="2_k6662"]
+[ext_resource type="PackedScene" uid="uid://diphtbcci3p76" path="res://Cenas/jogador.tscn" id="2_n2en6"]
+[ext_resource type="Texture2D" uid="uid://dk6hoq5uxafcy" path="res://Tiles014_1K-PNG/Tiles014_1K-PNG_NormalDX.png" id="3_65ygv"]
+[ext_resource type="Texture2D" uid="uid://ea8plctsau0q" path="res://Tiles014_1K-PNG/Tiles014_1K-PNG_Roughness.png" id="4_e3ho8"]
+[ext_resource type="Texture2D" uid="uid://04dxf4c6mutg" path="res://PavingStones028_1K-PNG/PavingStones028_1K-PNG_Color.png" id="5_kagu5"]
+[ext_resource type="Texture2D" uid="uid://c74xhpixt8c6y" path="res://PavingStones028_1K-PNG/PavingStones028_1K-PNG_NormalDX.png" id="6_wddeb"]
+[ext_resource type="Texture2D" uid="uid://cxgaxmrsyxeou" path="res://PavingStones028_1K-PNG/PavingStones028_1K-PNG_Roughness.png" id="7_gegaf"]
+[ext_resource type="PackedScene" uid="uid://dfe0q00odjjkg" path="res://fade_in.tscn" id="9_65ygv"]
+[ext_resource type="PackedScene" uid="uid://bxhogshm24o6c" path="res://buraco_mortal.tscn" id="10_e3ho8"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n2en6"]
+sky_top_color = Color(0.37836915, 0.30437514, 0.65432346, 1)
+sky_horizon_color = Color(0.382374, 0.36387545, 0.45136255, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.382374, 0.36387545, 0.45136255, 1)
+
+[sub_resource type="Sky" id="Sky_12m1u"]
+sky_material = SubResource("ProceduralSkyMaterial_n2en6")
+
+[sub_resource type="Environment" id="Environment_00j4k"]
+background_mode = 2
+sky = SubResource("Sky_12m1u")
+tonemap_mode = 2
+ssao_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hqyny"]
+size = Vector3(31.383028, 6.192871, 47.883423)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n2en6"]
+size = Vector3(26.632818, 9.974121, 21.226807)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i08y3"]
+albedo_texture = ExtResource("2_k6662")
+metallic = 0.48
+metallic_specular = 0.47
+roughness_texture = ExtResource("4_e3ho8")
+normal_enabled = true
+normal_scale = 5.57
+normal_texture = ExtResource("3_65ygv")
+uv1_scale = Vector3(-0.345, -0.345, -0.345)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hhpk5"]
+albedo_texture = ExtResource("5_kagu5")
+metallic = 0.08
+metallic_specular = 0.61
+roughness = 0.75
+roughness_texture = ExtResource("7_gegaf")
+normal_enabled = true
+normal_scale = 1.54
+normal_texture = ExtResource("6_wddeb")
+uv1_scale = Vector3(0.085, 0.085, 0.085)
+uv1_triplanar = true
+
+[node name="Fase1" type="Node3D" unique_id=462881960]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1003390436]
+environment = SubResource("Environment_00j4k")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1021158443]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.88729584, 0.69168276, 0.8827817, 1)
+light_energy = 1.6
+shadow_enabled = true
+directional_shadow_max_distance = 1153.0
+
+[node name="AtivarCamera" parent="." unique_id=1993891686 instance=ExtResource("1_hqyny")]
+collision_layer = 3
+camera_path = NodePath("../Camera3D")
+segue = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="AtivarCamera" unique_id=1856841842]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.92768, 1.9996614, -29.306686)
+shape = SubResource("BoxShape3D_hqyny")
+
+[node name="AtivarCamera2" parent="." unique_id=1389477907 instance=ExtResource("1_hqyny")]
+collision_layer = 3
+camera_path = NodePath("../Camera3D2")
+segue = true
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="AtivarCamera2" unique_id=1131692140]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.16459, 6.486722, -23.550198)
+shape = SubResource("BoxShape3D_n2en6")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1251709489]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=237513696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.228107, 0, -1.4613457)
+size = Vector3(99.694984, 1, 104.20157)
+material = SubResource("StandardMaterial3D_i08y3")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=209515141]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -27.187157, 13.275736, 50.301506)
+size = Vector3(0.53, 25.668, 98.87836)
+material = SubResource("StandardMaterial3D_hhpk5")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D5" unique_id=13573687]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 51.68887, 0, 49.56959)
+size = Vector3(0.53, 25.668, 103.6743)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D5/CSGBox3D2" unique_id=1324447570]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -49.569588, 0, -51.70729)
+size = Vector3(0.53, 25.668, 98.87836)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D/CSGBox3D5/CSGBox3D2/CSGBox3D6" unique_id=869287189]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -51.836197, 0, -49.27565)
+size = Vector3(0.53, 25.668, 103.41649)
+
+[node name="jogador" parent="." unique_id=1338297410 instance=ExtResource("2_n2en6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65242, 0.60161304, -17.060032)
+alturaPulo = null
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1539418501]
+transform = Transform3D(-0.104281016, -0.56454694, 0.8187871, 0.023874298, 0.82161766, 0.56953925, -0.9942615, 0.07894008, -0.07220093, 18.195477, 16.879162, -23.49987)
+
+[node name="Camera3D2" type="Camera3D" parent="." unique_id=1675325131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.862816, 19.231396, 18.493317)
+
+[node name="Fade_in" parent="." unique_id=1053857177 instance=ExtResource("9_65ygv")]
+
+[node name="BuracoMortal" parent="." unique_id=1357681736 instance=ExtResource("10_e3ho8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2710924, 0)

@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://dcypa34i275xu"]
+
+[ext_resource type="PackedScene" uid="uid://diphtbcci3p76" path="res://Cenas/jogador.tscn" id="1_w4tno"]
+[ext_resource type="PackedScene" uid="uid://cv04vjh5ti34d" path="res://check_point.tscn" id="2_xu8hi"]
+[ext_resource type="PackedScene" uid="uid://bth1n32kmy8x5" path="res://Cenas/coletavel.tscn" id="3_sqgjq"]
+[ext_resource type="Script" uid="uid://ck3q8rl20ccfr" path="res://Script/area_exited.gd" id="4_j7xbl"]
+[ext_resource type="PackedScene" uid="uid://dpd0unlkl3jvy" path="res://Cenas/plataforma.tscn" id="4_w4tno"]
+[ext_resource type="PackedScene" uid="uid://dx86mcl0akje6" path="res://node_game_manager.tscn" id="5_yja4k"]
+[ext_resource type="PackedScene" uid="uid://bxhogshm24o6c" path="res://buraco_mortal.tscn" id="6_sqgjq"]
+[ext_resource type="PackedScene" uid="uid://dfe0q00odjjkg" path="res://fade_in.tscn" id="7_j7xbl"]
+[ext_resource type="PackedScene" uid="uid://mp6kdh0obmp3" path="res://Cenas/cubo.tscn" id="9_6fna2"]
+[ext_resource type="PackedScene" uid="uid://b8okpq2tvptfc" path="res://Cenas/node_save_loads.tscn" id="10_7pt1d"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2qqbk"]
+sky_top_color = Color(0.37836915, 0.30437514, 0.65432346, 1)
+sky_horizon_color = Color(0.382374, 0.36387545, 0.45136255, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.382374, 0.36387545, 0.45136255, 1)
+
+[sub_resource type="Sky" id="Sky_66nsv"]
+sky_material = SubResource("ProceduralSkyMaterial_2qqbk")
+
+[sub_resource type="Environment" id="Environment_epxgt"]
+background_mode = 2
+sky = SubResource("Sky_66nsv")
+tonemap_mode = 2
+ssao_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1w6ss"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66nsv"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.5568628)
+albedo_texture = SubResource("CompressedTexture2D_1w6ss")
+
+[sub_resource type="SphereMesh" id="SphereMesh_epxgt"]
+material = SubResource("StandardMaterial3D_66nsv")
+radius = 0.2
+height = 0.4
+rings = 7
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_epxgt"]
+size = Vector3(14.7595215, 8.404388, 11.836426)
+
+[node name="CenaTeste" type="Node3D" unique_id=1595633141]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=310326447]
+environment = SubResource("Environment_epxgt")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1310463460]
+transform = Transform3D(-0.7944146, 0.60541946, -0.048710894, 0, 0.08019893, 0.9967789, 0.60737586, 0.7918557, -0.063711196, 0, 0, 0)
+light_color = Color(0.88729584, 0.69168276, 0.8827817, 1)
+light_energy = 1.6
+directional_shadow_max_distance = 1153.0
+
+[node name="jogador" parent="." unique_id=1338297410 instance=ExtResource("1_w4tno")]
+transform = Transform3D(0.9990611, 0, 0.043323062, 0, 1, 0, -0.043323062, 0, 0.9990611, 0.30359933, 2.081308, -0.19971561)
+wall_min_slide_angle = 0.2617994
+
+[node name="Camera3D" type="Camera3D" parent="jogador" unique_id=215204856]
+transform = Transform3D(-0.9987079, 0, 0.050819658, 0, 1, 0, -0.050819658, 0, -0.9987079, 0.40130517, 5.452733, -11.056337)
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="." unique_id=1008188354]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7395728, 1)
+emitting = false
+mesh = SubResource("SphereMesh_epxgt")
+direction = Vector3(1.97, 1.96, 0)
+spread = 7.42
+gravity = Vector3(0, -1.91, 0)
+angular_velocity_min = -121.61
+angular_velocity_max = 442.52
+linear_accel_min = 8.49
+linear_accel_max = 33.23
+radial_accel_min = 32.68
+radial_accel_max = 32.68
+tangential_accel_min = 40.78
+tangential_accel_max = 40.78
+angle_min = 81.8
+angle_max = 230.3
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=739157193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 4.5)
+use_collision = true
+size = Vector3(28, 1, 40)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=891795235]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 1.0432973, 11.391304)
+use_collision = true
+size = Vector3(8, 0.25, 5)
+
+[node name="Coletavel" parent="." unique_id=832538565 instance=ExtResource("3_sqgjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8101425, 1.025, -4.9954195)
+
+[node name="AreaEXITED" type="Area3D" parent="." unique_id=1909034397]
+collision_mask = 2
+script = ExtResource("4_j7xbl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaEXITED" unique_id=199325029]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016967773, 5.2628326, -6.446455)
+shape = SubResource("BoxShape3D_epxgt")
+
+[node name="Frente" type="Node3D" parent="AreaEXITED/CollisionShape3D" unique_id=2039674058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.7460976)
+
+[node name="Trás" type="Node3D" parent="AreaEXITED/CollisionShape3D" unique_id=1191794448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.756484)
+
+[node name="Esquerda" type="Node3D" parent="AreaEXITED/CollisionShape3D" unique_id=1585519244]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.863563, 0, 0)
+
+[node name="Direita" type="Node3D" parent="AreaEXITED/CollisionShape3D" unique_id=1209036752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.85358, 0, 0)
+
+[node name="Plataforma" parent="." unique_id=462228246 instance=ExtResource("4_w4tno")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.156867, 0)
+
+[node name="NodeGameManager" parent="." unique_id=1652138658 instance=ExtResource("5_yja4k")]
+
+[node name="BuracoMortal" parent="." unique_id=1357681736 instance=ExtResource("6_sqgjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9738612, 6.7306676)
+
+[node name="Fade_in" parent="." unique_id=1053857177 instance=ExtResource("7_j7xbl")]
+
+[node name="CheckPoint" parent="." unique_id=1692128935 instance=ExtResource("2_xu8hi")]
+transform = Transform3D(0.99988765, 0, -0.014991816, 0, 1, 0, 0.014991816, 0, 0.99988765, -8.193859, 3.8365912, 5.325383)
+
+[node name="RigidBody3D" parent="." unique_id=1082389431 instance=ExtResource("9_6fna2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.721182, 1.7984614, 4.498333)
+
+[node name="NodeSaveLoads" parent="." unique_id=2144618380 instance=ExtResource("10_7pt1d")]

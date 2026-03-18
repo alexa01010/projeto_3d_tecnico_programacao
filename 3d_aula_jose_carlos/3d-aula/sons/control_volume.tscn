@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://c2efu03humdfm"]
+
+[ext_resource type="Script" uid="uid://bsjeutc3ialfe" path="res://sons/h_slider.gd" id="1_2eeol"]
+[ext_resource type="Script" uid="uid://if0v6e5ah1kn" path="res://sons/control_volume.gd" id="1_mgs1c"]
+[ext_resource type="AudioStream" uid="uid://cacnd0vwqe2ht" path="res://Script/domartistudios-magical-wizard-school-orchestral-fantasy-488126.mp3" id="2_0dlrc"]
+[ext_resource type="PackedScene" uid="uid://bs1hufd55py3q" path="res://tela_inicial.tscn" id="2_2pacy"]
+[ext_resource type="AudioStream" uid="uid://0nrg2agwnlkl" path="res://Script/freesound_community-cartoon_wink_magic_sparkle-6896.mp3" id="3_wkqs1"]
+[ext_resource type="AudioStream" uid="uid://lebc7xpby7wp" path="res://u_6ekfl947a2-cat-meow-297927.mp3" id="4_mgs1c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2eeol"]
+font_size = 103
+
+[node name="Control_volume" type="Control" unique_id=1718873268]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mgs1c")
+voltar_menu = ExtResource("2_2pacy")
+
+[node name="HSliderMusic" type="HSlider" parent="." unique_id=676439201 node_paths=PackedStringArray("audio_stream_player")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.5
+offset_top = -81.0
+offset_right = 285.57
+offset_bottom = -12.25
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.505, 0.505)
+script = ExtResource("1_2eeol")
+audio_stream_player = NodePath("../AudioStreamPlayer")
+
+[node name="Label" type="Label" parent="HSliderMusic" unique_id=1615497386]
+layout_mode = 0
+offset_top = -22.222223
+offset_right = 350.0
+offset_bottom = 119.77778
+scale = Vector2(0.36, 0.36)
+theme_override_font_sizes/font_size = 321
+text = "Música"
+label_settings = SubResource("LabelSettings_2eeol")
+
+[node name="HSliderSFX" type="HSlider" parent="." unique_id=1075829833 node_paths=PackedStringArray("audio_stream_player")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.5
+offset_top = 1.0
+offset_right = 285.57
+offset_bottom = 69.75
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.505, 0.505)
+script = ExtResource("1_2eeol")
+bus_name = "SFX"
+audio_stream_player = NodePath("../AudioStreamPlayer")
+
+[node name="SFX" type="Label" parent="HSliderSFX" unique_id=377374769]
+layout_mode = 0
+offset_top = -22.222223
+offset_right = 176.0
+offset_bottom = 119.77778
+scale = Vector2(0.36, 0.36)
+theme_override_font_sizes/font_size = 321
+text = "SFX"
+label_settings = SubResource("LabelSettings_2eeol")
+
+[node name="HSliderVOICE" type="HSlider" parent="." unique_id=2089137942 node_paths=PackedStringArray("audio_stream_player")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.5
+offset_top = 86.0
+offset_right = 285.57
+offset_bottom = 154.75
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.505, 0.505)
+script = ExtResource("1_2eeol")
+bus_name = "VOICE"
+audio_stream_player = NodePath("../AudioStreamPlayer")
+
+[node name="VOICE" type="Label" parent="HSliderVOICE" unique_id=1451302133]
+layout_mode = 0
+offset_top = -22.222223
+offset_right = 299.0
+offset_bottom = 264.77777
+scale = Vector2(0.36, 0.36)
+theme_override_font_sizes/font_size = 321
+text = "VOICE
+"
+label_settings = SubResource("LabelSettings_2eeol")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1339274672]
+stream = ExtResource("2_0dlrc")
+autoplay = true
+bus = &"Música"
+
+[node name="SFX" type="AudioStreamPlayer" parent="." unique_id=1119775179]
+stream = ExtResource("3_wkqs1")
+autoplay = true
+bus = &"SFX"
+
+[node name="VOICE" type="AudioStreamPlayer" parent="." unique_id=2021718150]
+stream = ExtResource("4_mgs1c")
+autoplay = true
+bus = &"VOICE"
+
+[node name="Label" type="Label" parent="." unique_id=668382261]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.5
+offset_top = 10.0
+offset_right = 11.5
+offset_bottom = 33.0
+grow_horizontal = 2
+text = "SOM"
+
+[node name="Node3D" type="Node3D" parent="." unique_id=349059929 groups=["player"]]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=739858527]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -56.520004
+offset_top = 10.0
+offset_right = -2.5200195
+offset_bottom = 41.0
+grow_horizontal = 0
+scale = Vector2(0.88, 0.88)
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1414978418]
+layout_mode = 2
+text = "voltar"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://2fql5ql7mih8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_070nh"]
+font_size = 63
+font_color = Color(0, 0, 0, 1)
+
+[node name="Créditos" type="Control" unique_id=257379237]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=276015970]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=978728139]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=496542129]
+offset_left = 96.0
+offset_top = 64.0
+offset_right = 184.0
+offset_bottom = 151.0
+text = "EU"
+label_settings = SubResource("LabelSettings_070nh")

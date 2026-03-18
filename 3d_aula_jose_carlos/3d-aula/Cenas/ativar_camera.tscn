@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bk5la0gbthjm7"]
+
+[ext_resource type="Script" uid="uid://x7rpyieo4ngi" path="res://Script/ativar_camera.gd" id="1_gcul4"]
+
+[node name="AtivarCamera" type="Area3D" unique_id=1993891686]
+script = ExtResource("1_gcul4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=339369920]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
