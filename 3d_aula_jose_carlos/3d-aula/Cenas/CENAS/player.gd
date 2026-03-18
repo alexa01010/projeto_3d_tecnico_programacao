@@ -50,7 +50,7 @@ func _physics_process(delta: float) -> void:
 		esta_pulando = true
 		velocity.y = JUMP_VELOCITY
 		pulo_duplo = true
-		
+		#ooie
 	elif Input.is_action_just_pressed("pular") and pulo_duplo and esta_pulando:
 		animation_player.play("Jump")
 		velocity.y = JUMP_VELOCITY * 1

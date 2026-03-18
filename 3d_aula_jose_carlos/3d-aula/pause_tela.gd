@@ -4,9 +4,11 @@ extends CanvasLayer
 @export var sair : PackedScene
 
 @onready var retornar_button: Button = $holder/retornar_button
+@onready var sair_button: Button = $holder/sair_button
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	retornar_button.grab_focus()
 	visible = false
 
 
@@ -15,7 +17,8 @@ func _process(delta: float) -> void:
 	pass
 
 func _unhandled_input(event) -> void:
-	if event.is_action_pressed("ui_cancel"):
+	if event.is_action_pressed("pause"):
+		retornar_button.grab_focus()
 		visible = true
 		get_tree().paused = true
 		
