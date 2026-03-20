@@ -27,6 +27,7 @@ var esta_atacando = false
 var esta_morto = false
 
 @onready var miado: AudioStreamPlayer = $miado
+@onready var ataque_2: AudioStreamPlayer = $ataque2
 
 @export var vida = 10
 func _ready() -> void:
@@ -48,6 +49,7 @@ func _physics_process(delta: float) -> void:
 		pulo_duplo = true
 		esta_pulando = false
 	if Input.is_action_pressed("atacar"):
+		ataque_2.play()
 		ataque()
 	if Input.is_action_just_pressed("pular") and is_on_floor():
 		animation_player.play("Jump")

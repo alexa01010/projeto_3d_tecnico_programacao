@@ -12,6 +12,7 @@ var alvo
 var morreu = false
 var pode_atacar = true
 var distancia_ataque = 2.0 
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 @onready var timer_ataque: Timer = $Timer
 func _ready() -> void:
@@ -68,6 +69,7 @@ func perseguir_alvo(delta):
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
+		audio_stream_player.play()
 		state = estado.ATAQUE
 		alvo = body
 

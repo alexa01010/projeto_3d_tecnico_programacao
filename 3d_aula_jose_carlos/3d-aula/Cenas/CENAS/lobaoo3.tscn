@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b13qa7qdvcaj3" path="res://Cenas/CENAS/lobaoo.gd" id="1_rbbc3"]
 [ext_resource type="Texture2D" uid="uid://cgdfc15fglxed" path="res://Cenas/CENAS/Lobinho/lobaoo_Lonhaotex.png" id="2_qtwn3"]
 [ext_resource type="AudioStream" uid="uid://clf7gxw3yaluv" path="res://gritando.mp3" id="3_qtwn3"]
+[ext_resource type="AudioStream" uid="uid://bbq1ifmniylxt" path="res://tuc.ogg" id="4_shuym"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p76uh"]
 resource_name = "lonhaotex"
@@ -653,6 +654,12 @@ debug_color = Color(0.83425814, 0.38499072, 0.16517556, 0.41960785)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2058621855]
 stream = ExtResource("3_qtwn3")
+volume_db = -28.028
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1091023150]
+stream = ExtResource("4_shuym")
+volume_db = -9.187
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

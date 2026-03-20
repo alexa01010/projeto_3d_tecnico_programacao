@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://hgwim71aurkx"]
 
 [ext_resource type="Script" uid="uid://bamafx7lyst4t" path="res://pause_tela.gd" id="1_wqhrv"]
+[ext_resource type="AudioStream" uid="uid://dlio6fforgrp2" path="res://universfield-game-bonus-03-487857 (1).mp3" id="2_hk6ek"]
 
 [node name="pause_tela" type="CanvasLayer" unique_id=478698103]
 process_mode = 3
@@ -43,6 +44,10 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Sair"
 
 [node name="Node3D" type="Node3D" parent="." unique_id=84517828 groups=["player"]]
+
+[node name="click" type="AudioStreamPlayer" parent="." unique_id=628908667]
+stream = ExtResource("2_hk6ek")
+volume_db = -14.519
 
 [connection signal="pressed" from="holder/retornar_button" to="." method="_on_retornar_button_pressed"]
 [connection signal="pressed" from="holder/sair_button" to="." method="_on_sair_button_pressed"]

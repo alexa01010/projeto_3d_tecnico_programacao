@@ -16,6 +16,7 @@ func coletar(entroNode: Area3D)-> void:
 	if !entroNode.owner.is_in_group("player"):
 		return
 	coletado.emit()
+	GameManager.AddScore(1)
 	isGet = true
 	print("coletadosdddd")
 	queue_free()

@@ -13,6 +13,7 @@ var morto = false
 var cooldown = false
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var lobaoo: Node3D = $"."
+@onready var audio_stream_player_2: AudioStreamPlayer = $AudioStreamPlayer2
 
 func _ready() -> void:
 	lobaoo.show()
@@ -38,6 +39,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		print("oie")
 		state= estado.ATAQUE 
 		GameManager.GameManagerInScene.AddLife(-1)
+		audio_stream_player_2.play()
 		alvo = body
 		alvo.TremerControle()
 		

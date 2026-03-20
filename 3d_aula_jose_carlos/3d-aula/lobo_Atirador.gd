@@ -18,6 +18,7 @@ var pode_atirar =true
 @onready var spawn_tiro: Marker3D = $"../spawn_tiro"
 @onready var pivo: Node3D = $"."
 
+@onready var audio_stream_player: AudioStreamPlayer = $"../AudioStreamPlayer"
 
 func _ready() -> void:
 	$".".show()
@@ -68,6 +69,7 @@ func atirar():
 	if cena_tiro and alvo and spawn_tiro:
 		var tiro = cena_tiro.instantiate()
 		tiro.global_position = spawn_tiro.global_position
+		audio_stream_player.play()
 		var direcao = (alvo.global_position - spawn_tiro.global_position).normalized()
 		tiro.look_at(tiro.global_position + direcao, Vector3.UP)
 		get_tree().current_scene.add_child(tiro)

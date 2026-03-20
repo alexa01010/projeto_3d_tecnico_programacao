@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dqsjyc0p547ld" path="res://Cenas/CENAS/player.gd" id="1_xmmt6"]
 [ext_resource type="Texture2D" uid="uid://tox7405gx36d" path="res://3D/modelos/buddybuddy_Buddytex.png" id="2_xmmt6"]
 [ext_resource type="AudioStream" uid="uid://lebc7xpby7wp" path="res://u_6ekfl947a2-cat-meow-297927.mp3" id="3_kel2f"]
+[ext_resource type="AudioStream" uid="uid://bhr66g3xjoy75" path="res://sparkle.ogg" id="4_t7hmr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6i24g"]
 radius = 1.121582
@@ -2062,5 +2063,8 @@ debug_color = Color(0.7293765, 0.46690327, 0.23233345, 0.41960785)
 
 [node name="miado" type="AudioStreamPlayer" parent="." unique_id=749313927]
 stream = ExtResource("3_kel2f")
+
+[node name="ataque2" type="AudioStreamPlayer" parent="." unique_id=1469765505]
+stream = ExtResource("4_t7hmr")
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

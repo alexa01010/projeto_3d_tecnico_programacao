@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dffk1heo1tugq" path="res://lobo_Atirador.gd" id="1_8ek8i"]
 [ext_resource type="PackedScene" uid="uid://duevat628rmdh" path="res://latido_.tscn" id="2_lfaxb"]
 [ext_resource type="Texture2D" uid="uid://cgdfc15fglxed" path="res://Cenas/CENAS/Lobinho/lobaoo_Lonhaotex.png" id="2_q83if"]
+[ext_resource type="AudioStream" uid="uid://dxhltmxkw4q8p" path="res://tiro.ogg" id="4_lfaxb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p76uh"]
 resource_name = "lonhaotex"
@@ -474,7 +475,7 @@ _data = {
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dwcbx"]
-radius = 17.062544
+radius = 19.679657
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_s8ftp"]
 
@@ -645,6 +646,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09076786, 0.37911868, -1.4
 
 [node name="Timer" type="Timer" parent="." unique_id=673329237]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1702716339]
+stream = ExtResource("4_lfaxb")
+volume_db = -17.258
 
 [connection signal="area_entered" from="lobaoo/Area3D" to="lobaoo" method="_on_area_3d_area_entered"]
 [connection signal="body_entered" from="lobaoo/Area3D" to="lobaoo" method="_on_area_3d_body_entered"]

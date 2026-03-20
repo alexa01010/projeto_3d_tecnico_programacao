@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" uid="uid://bsjeutc3ialfe" path="res://sons/h_slider.gd" id="1_2eeol"]
 [ext_resource type="Script" uid="uid://if0v6e5ah1kn" path="res://sons/control_volume.gd" id="1_mgs1c"]
-[ext_resource type="AudioStream" uid="uid://cacnd0vwqe2ht" path="res://Script/domartistudios-magical-wizard-school-orchestral-fantasy-488126.mp3" id="2_0dlrc"]
 [ext_resource type="PackedScene" uid="uid://bs1hufd55py3q" path="res://tela_inicial.tscn" id="2_2pacy"]
 [ext_resource type="AudioStream" uid="uid://0nrg2agwnlkl" path="res://Script/freesound_community-cartoon_wink_magic_sparkle-6896.mp3" id="3_wkqs1"]
+[ext_resource type="AudioStream" uid="uid://yy8pl5fokp4n" path="res://funkytownmp3.ogg" id="4_2pacy"]
 [ext_resource type="AudioStream" uid="uid://lebc7xpby7wp" path="res://u_6ekfl947a2-cat-meow-297927.mp3" id="4_mgs1c"]
+[ext_resource type="AudioStream" uid="uid://dlio6fforgrp2" path="res://universfield-game-bonus-03-487857 (1).mp3" id="7_ber3g"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2eeol"]
 font_size = 103
@@ -105,7 +106,7 @@ text = "VOICE
 label_settings = SubResource("LabelSettings_2eeol")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1339274672]
-stream = ExtResource("2_0dlrc")
+stream = ExtResource("4_2pacy")
 autoplay = true
 bus = &"Música"
 
@@ -148,5 +149,9 @@ scale = Vector2(0.88, 0.88)
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=1414978418]
 layout_mode = 2
 text = "voltar"
+
+[node name="click" type="AudioStreamPlayer" parent="." unique_id=1475254344]
+stream = ExtResource("7_ber3g")
+bus = &"SFX"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

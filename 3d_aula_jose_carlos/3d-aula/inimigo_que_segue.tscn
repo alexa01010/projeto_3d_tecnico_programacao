@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c084b4nkfpo6v" path="res://inimigo_que_segue.gd" id="1_kb2ft"]
 [ext_resource type="Texture2D" uid="uid://cgdfc15fglxed" path="res://Cenas/CENAS/Lobinho/lobaoo_Lonhaotex.png" id="2_v8eju"]
+[ext_resource type="AudioStream" uid="uid://cvxffxlsjymoy" path="res://tira_o_ja.ogg" id="3_v8eju"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p76uh"]
 resource_name = "lonhaotex"
@@ -647,6 +648,10 @@ shape = SubResource("CapsuleShape3D_rbbc3")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="hitbox" unique_id=713304354]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.0683594)
 shape = SubResource("SphereShape3D_kb2ft")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=505378052]
+stream = ExtResource("3_v8eju")
+volume_db = -14.824
 
 [connection signal="body_entered" from="lobaoo/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="lobaoo/Area3D" to="." method="_on_area_3d_body_exited"]
