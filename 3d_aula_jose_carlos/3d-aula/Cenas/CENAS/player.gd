@@ -25,6 +25,10 @@ var pulo_duplo = false
 
 var esta_atacando = false
 var esta_morto = false
+
+@onready var miado: AudioStreamPlayer = $miado
+
+@export var vida = 10
 func _ready() -> void:
 	collision_shape_3d.disabled = false
 	esta_atacando = false
@@ -32,6 +36,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	animation(delta)
+
 
 func _physics_process(delta: float) -> void:
 	#if esta_atacando:
@@ -127,27 +132,33 @@ func TremerControle()-> void:
 
 
 func morte():
-		esta_morto = true
-		print("morto")
-		animation_player.play("Death1")
-		set_physics_process(false)
-		#set_process(false)
-		collision_shape_3d.disabled = true
-		await get_tree().create_timer(3.0).timeout
-		collision_shape_3d.disabled = true
-		esta_morto = false
-		GameManager.voltar_ao_checkpoint()
+	esta_morto = true
+	print("morto")
+	animation_player.play("Death1")
+	set_physics_process(false)
+	set_process(false)
+	collision_shape_3d.disabled = true
+	await get_tree().create_timer(1.0).timeout
+	collision_shape_3d.disabled = true
+	esta_morto = false
 	
-		await get_tree().create_timer(1.0).timeout
-		reviver()
-		GameManager.GameManagerInScene.AddLife(4)
+	await get_tree().create_timer(1.9).timeout
+	GameManager.GameManagerInScene.voltar_ao_checkpoint()
+	reviver()
 
 func reviver() -> void:
-	if HudNode.HudInScene:
-			HudNode.HudInScene.AttHp(4)
 	esta_morto = false
 	set_physics_process(true)
-	#set_process(true)
+	set_process(true)
+	if HudNode.HudInScene:
+		HudNode.HudInScene.AttHp(6)
 	collision_shape_3d.disabled = false
 	if animation_player.has_animation("IdleAnim2"):
 		animation_player.play("IdleAnim2")
+	
+		GameManager.GameManagerInScene.AddLife(6)
+
+#
+#func _on_hitbox_body_entered(body: Node3D) -> void:
+	#if body.is_in_group("inimigo"):
+		#get_parent().atualizar_vida(-1)

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://qndak1qreuai"]
 
-[ext_resource type="Script" uid="uid://b13qa7qdvcaj3" path="res://Cenas/CENAS/lobaoo.gd" id="1_kb2ft"]
+[ext_resource type="Script" uid="uid://c084b4nkfpo6v" path="res://inimigo_que_segue.gd" id="1_kb2ft"]
 [ext_resource type="Texture2D" uid="uid://cgdfc15fglxed" path="res://Cenas/CENAS/Lobinho/lobaoo_Lonhaotex.png" id="2_v8eju"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p76uh"]
@@ -473,19 +473,22 @@ _data = {
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dwcbx"]
-radius = 7.998876
+radius = 14.394747
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_s8ftp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rbbc3"]
 radius = 2.0390625
-height = 7.6137695
+height = 7.4123535
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kb2ft"]
+radius = 7.8046937
 
 [node name="inimigo_que_segue" type="CharacterBody3D" unique_id=402323441]
+script = ExtResource("1_kb2ft")
 
 [node name="lobaoo" type="Node3D" parent="." unique_id=965961914]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1.0000007, 0, 0, 0)
-script = ExtResource("1_kb2ft")
 
 [node name="Armature" type="Node3D" parent="lobaoo" unique_id=1343243774]
 transform = Transform3D(-0.99969804, 0, 0.024571719, 0, 1, 0, -0.024571719, 0, -0.99969804, 0, 0, 0)
@@ -637,5 +640,15 @@ margin = 1.49
 transform = Transform3D(1, 0, 0, 0, 0.022268556, 0.99975204, 0, -0.99975204, 0.022268556, 0, -0.33560205, 1.858613)
 shape = SubResource("CapsuleShape3D_rbbc3")
 
-[connection signal="body_entered" from="lobaoo/Area3D" to="lobaoo" method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="lobaoo/Area3D" to="lobaoo" method="_on_area_3d_body_exited"]
+[node name="Timer" type="Timer" parent="." unique_id=1313332326]
+
+[node name="hitbox" type="Area3D" parent="." unique_id=1714927354]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="hitbox" unique_id=713304354]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.0683594)
+shape = SubResource("SphereShape3D_kb2ft")
+
+[connection signal="body_entered" from="lobaoo/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="lobaoo/Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

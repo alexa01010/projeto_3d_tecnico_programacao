@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://2fql5ql7mih8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_070nh"]
-font_size = 63
+font_size = 19
 font_color = Color(0, 0, 0, 1)
 
 [node name="Créditos" type="Control" unique_id=257379237]
@@ -22,9 +22,17 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=496542129]
-offset_left = 96.0
-offset_top = 64.0
-offset_right = 184.0
-offset_bottom = 151.0
-text = "EU"
+offset_left = 8.0
+offset_top = -16.0
+offset_right = 264.0
+offset_bottom = 277.0
+text = "Jogo feito para finalização do módulo de programação em jogos 3D.
+Professora Hensley.
+Professor José Carlos.
+Feito por Alexa"
 label_settings = SubResource("LabelSettings_070nh")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1835465731 groups=["player"]]

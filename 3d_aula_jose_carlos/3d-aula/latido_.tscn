@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://duevat628rmdh"]
+
+[ext_resource type="Script" uid="uid://b618dvyry2p1k" path="res://latido_.gd" id="1_rwxel"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3mneh"]
+radius = 1.1195879
+
+[node name="latido_" type="Node3D" unique_id=747399256]
+script = ExtResource("1_rwxel")
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="." unique_id=419201212]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+
+[node name="latido_inimigo" type="Area3D" parent="." unique_id=857561840]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="latido_inimigo" unique_id=1312294271]
+shape = SubResource("SphereShape3D_3mneh")
+
+[connection signal="body_entered" from="latido_inimigo" to="." method="_on_latido_inimigo_body_entered"]

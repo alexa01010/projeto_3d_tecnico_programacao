@@ -7,7 +7,7 @@ class_name HudNode
 static var HudInScene : HudNode = null
 
 func _ready() -> void:
-	AttHp(4)
+	AttHp(6)
 	HudInScene = self
 
 func AttScores()-> void:

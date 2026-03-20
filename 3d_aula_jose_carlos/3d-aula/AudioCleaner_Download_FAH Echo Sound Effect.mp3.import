@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dys818wh0c553"
+path="res://.godot/imported/AudioCleaner_Download_FAH Echo Sound Effect.mp3-6abb57248c6308e56264db513679c3d2.mp3str"
+
+[deps]
+
+source_file="res://AudioCleaner_Download_FAH Echo Sound Effect.mp3"
+dest_files=["res://.godot/imported/AudioCleaner_Download_FAH Echo Sound Effect.mp3-6abb57248c6308e56264db513679c3d2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

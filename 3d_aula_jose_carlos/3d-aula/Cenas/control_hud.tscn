@@ -10,7 +10,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_ho54m")
 TextScore = NodePath("RichTextLabel")
-hpNodesArray = [NodePath("HBoxContainer/TextureRect"), NodePath("HBoxContainer/TextureRect2"), NodePath("HBoxContainer/TextureRect3")]
+hpNodesArray = [NodePath("HBoxContainer/TextureRect"), NodePath("HBoxContainer/TextureRect2"), NodePath("HBoxContainer/TextureRect3"), NodePath("HBoxContainer/TextureRect4"), NodePath("HBoxContainer/TextureRect5"), NodePath("HBoxContainer/TextureRect6")]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1002851542]
 layout_mode = 1
@@ -34,6 +34,21 @@ texture = ExtResource("1_qsoh4")
 expand_mode = 2
 
 [node name="TextureRect3" type="TextureRect" parent="HBoxContainer" unique_id=1462011138]
+layout_mode = 2
+texture = ExtResource("1_qsoh4")
+expand_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="HBoxContainer" unique_id=1407701665]
+layout_mode = 2
+texture = ExtResource("1_qsoh4")
+expand_mode = 2
+
+[node name="TextureRect5" type="TextureRect" parent="HBoxContainer" unique_id=873996224]
+layout_mode = 2
+texture = ExtResource("1_qsoh4")
+expand_mode = 2
+
+[node name="TextureRect6" type="TextureRect" parent="HBoxContainer" unique_id=492620864]
 layout_mode = 2
 texture = ExtResource("1_qsoh4")
 expand_mode = 2

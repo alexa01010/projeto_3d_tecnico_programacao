@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dykjoq2ru8gir"]
+
+[ext_resource type="Script" uid="uid://bmrd1jswlcqx5" path="res://plataforma_movel.gd" id="1_rexx3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n4jik"]
+size = Vector3(5, 1, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n4jik"]
+size = Vector3(5, 1, 5)
+
+[sub_resource type="Curve3D" id="Curve3D_q0b27"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.941637, 0, -0.098562725, 0, 0, 0, 0, 0, 0, 6.7726717, 0, -0.04224104),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="PlataformaHorizontal" type="Node3D" unique_id=462228246]
+
+[node name="Plataforma_movel" type="AnimatableBody3D" parent="." unique_id=371520106 node_paths=PackedStringArray("PathFollow", "oi")]
+transform = Transform3D(1, -3.5527137e-15, -3.5527137e-15, 0, 1, 0, -8.3518724e-23, 0, 1, 1.4210855e-14, 0, 0)
+collision_mask = 15
+script = ExtResource("1_rexx3")
+PathFollow = NodePath("../Path3D/PathFollow3D")
+oi = NodePath("../Timer")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plataforma_movel" unique_id=238695724]
+mesh = SubResource("BoxMesh_n4jik")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforma_movel" unique_id=1474476919]
+shape = SubResource("BoxShape3D_n4jik")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=2065695465]
+curve = SubResource("Curve3D_q0b27")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1762805293]
+transform = Transform3D(-0.0041069114, 0, -0.9999916, 0, 0.9999998, 0, 0.9999916, 0, -0.0041069114, -6.941637, 0, -0.098562725)
+loop = false
+
+[node name="Timer" type="Timer" parent="." unique_id=1079370840]
+process_callback = 0
+one_shot = true
+autostart = true

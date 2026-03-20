@@ -1,13 +1,13 @@
-[gd_scene format=4 uid="uid://btyn4ru8c8snb"]
+[gd_scene format=4 uid="uid://bw2rivg7ykosm"]
 
-[ext_resource type="Script" uid="uid://dffk1heo1tugq" path="res://lobo_Atirador.gd" id="1_8ek8i"]
-[ext_resource type="PackedScene" uid="uid://duevat628rmdh" path="res://latido_.tscn" id="2_lfaxb"]
-[ext_resource type="Texture2D" uid="uid://cgdfc15fglxed" path="res://Cenas/CENAS/Lobinho/lobaoo_Lonhaotex.png" id="2_q83if"]
+[ext_resource type="Script" uid="uid://blcjovql5b7jl" path="res://boss.gd" id="1_0bnu1"]
+[ext_resource type="PackedScene" uid="uid://c1eeqrim13w64" path="res://gatinho.tscn" id="2_lnbgr"]
+[ext_resource type="Texture2D" uid="uid://cgdfc15fglxed" path="res://Cenas/CENAS/Lobinho/lobaoo_Lonhaotex.png" id="2_skx2t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p76uh"]
 resource_name = "lonhaotex"
 cull_mode = 2
-albedo_texture = ExtResource("2_q83if")
+albedo_texture = ExtResource("2_skx2t")
 texture_filter = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_gfrdy"]
@@ -474,26 +474,28 @@ _data = {
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_dwcbx"]
-radius = 17.062544
+radius = 7.5204144
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_s8ftp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rbbc3"]
-radius = 2.0390625
-height = 7.6137695
+radius = 1.8818359
+height = 7.4123535
 
-[node name="inimigo_ atirador" type="CharacterBody3D" unique_id=460240777]
+[sub_resource type="SphereShape3D" id="SphereShape3D_kb2ft"]
+radius = 3.6991816
 
-[node name="lobaoo" type="Node3D" parent="." unique_id=670184565]
+[node name="BOSS_AA" type="CharacterBody3D" unique_id=402323441]
+script = ExtResource("1_0bnu1")
+cena_gato = ExtResource("2_lnbgr")
+
+[node name="lobaoo" type="Node3D" parent="." unique_id=965961914]
 transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 1.0000007, 0, 0, 0)
-script = ExtResource("1_8ek8i")
-vida = 10
-cena_tiro = ExtResource("2_lfaxb")
 
-[node name="Armature" type="Node3D" parent="lobaoo" unique_id=1831514579]
+[node name="Armature" type="Node3D" parent="lobaoo" unique_id=1343243774]
 transform = Transform3D(-0.99969804, 0, 0.024571719, 0, 1, 0, -0.024571719, 0, -0.99969804, 0, 0, 0)
 
-[node name="Skeleton3D" type="Skeleton3D" parent="lobaoo/Armature" unique_id=447995331]
+[node name="Skeleton3D" type="Skeleton3D" parent="lobaoo/Armature" unique_id=1294918003]
 bones/0/name = "buxinho"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 1.8942108e-16, 2.5043863e-16, -2.4951817e-16, -0.0048439503, 0.99998826, 1.9063196e-16, -0.99998826, -0.0048439503, -4.8844184e-18, 0.021997465, -3.1676354)
@@ -614,39 +616,41 @@ bones/16/position = Vector3(3.5390258e-07, 1.9731616, -6.146729e-08)
 bones/16/rotation = Quaternion(-0.68522394, -0.09762335, -0.102293864, 0.7144745)
 bones/16/scale = Vector3(1, 1, 1)
 
-[node name="Lonhinho" type="MeshInstance3D" parent="lobaoo/Armature/Skeleton3D" unique_id=1002284595]
+[node name="Lonhinho" type="MeshInstance3D" parent="lobaoo/Armature/Skeleton3D" unique_id=29511874]
 mesh = SubResource("ArrayMesh_gfrdy")
 skin = SubResource("Skin_5h3ef")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="lobaoo" unique_id=517200635]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lobaoo" unique_id=701681324]
 libraries/ = SubResource("AnimationLibrary_241b0")
 autoplay = &"Walk"
 playback_default_blend_time = 1.3
 
-[node name="Area3D" type="Area3D" parent="lobaoo" unique_id=1138542945]
+[node name="Area3D" type="Area3D" parent="lobaoo" unique_id=492220677]
 transform = Transform3D(1, 0, -2.6077032e-08, 0, 1, 0, 1.1175871e-08, 0, 0.9999997, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="lobaoo/Area3D" unique_id=1981692408]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lobaoo/Area3D" unique_id=417333046]
 transform = Transform3D(1, 0, 4.0978193e-08, 0, 1, 0, 4.8428777e-08, 0, 0.9999993, 0.122007474, 1.0396891, 1.6319429)
 shape = SubResource("SphereShape3D_dwcbx")
 
-[node name="SpringArm3D" type="SpringArm3D" parent="lobaoo" unique_id=1131078661]
+[node name="SpringArm3D" type="SpringArm3D" parent="lobaoo" unique_id=1359027085]
 transform = Transform3D(1.0000001, -3.7252903e-09, 0, 0, -4.37114e-08, -0.9999996, 0, 1.0000004, -4.371137e-08, 0.09875488, -0.4900093, -2.3105621)
 shape = SubResource("SeparationRayShape3D_s8ftp")
 spring_length = 15.535
 margin = 1.49
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=35104569]
-transform = Transform3D(1, 0, 0, 0, 0.022268556, 0.99975204, 0, -0.99975204, 0.022268556, 0, -0.33560205, 1.858613)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1069282634]
+transform = Transform3D(1, 0, 0, 0, 0.022268556, 0.99975204, 0, -0.99975204, 0.022268556, 0, 0.11628693, 1.959296)
 shape = SubResource("CapsuleShape3D_rbbc3")
 
-[node name="spawn_tiro" type="Marker3D" parent="." unique_id=1886042002]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09076786, 0.37911868, -1.4768212)
+[node name="Timer" type="Timer" parent="." unique_id=1313332326]
 
-[node name="Timer" type="Timer" parent="." unique_id=673329237]
-wait_time = 2.0
+[node name="hitbox" type="Area3D" parent="." unique_id=1714927354]
 
-[connection signal="area_entered" from="lobaoo/Area3D" to="lobaoo" method="_on_area_3d_area_entered"]
-[connection signal="body_entered" from="lobaoo/Area3D" to="lobaoo" method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="lobaoo/Area3D" to="lobaoo" method="_on_area_3d_body_exited"]
-[connection signal="timeout" from="Timer" to="lobaoo" method="_on_timer_timeout"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="hitbox" unique_id=713304354]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.0683594)
+shape = SubResource("SphereShape3D_kb2ft")
+
+[connection signal="body_entered" from="lobaoo/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="lobaoo/Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

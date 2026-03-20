@@ -1,9 +1,18 @@
 [gd_scene format=3 uid="uid://dx86mcl0akje6"]
 
-[ext_resource type="PackedScene" uid="uid://d14inncdnqs8f" path="res://Cenas/control_hud.tscn" id="1_bjx6o"]
+[ext_resource type="PackedScene" uid="uid://c7eas88s4rijv" path="res://Cenas/control_hud.tscn" id="1_bjx6o"]
 [ext_resource type="Script" uid="uid://rj0emco4s55a" path="res://node_game_manager.gd" id="1_rwbxg"]
+[ext_resource type="AudioStream" uid="uid://dys818wh0c553" path="res://AudioCleaner_Download_FAH Echo Sound Effect.mp3" id="3_y7wao"]
+[ext_resource type="AudioStream" uid="uid://lebc7xpby7wp" path="res://u_6ekfl947a2-cat-meow-297927.mp3" id="4_nku7g"]
 
 [node name="NodeGameManager" type="Node" unique_id=1652138658]
 script = ExtResource("1_rwbxg")
 
 [node name="ControlHUD" parent="." unique_id=910146368 instance=ExtResource("1_bjx6o")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1593436584]
+stream = ExtResource("3_y7wao")
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1751554325]
+stream = ExtResource("4_nku7g")
