@@ -10,10 +10,14 @@ static var HudInScene : HudNode = null
 func _ready() -> void:
 	AttHp(6)
 	HudInScene = self
-
-func AttScores()-> void:
-	TextScore.text = "Pontos: " + str(GameManager.GameManagerInScene.GetScore())
-
+	#AttScores()
+	#print("HUD pronto!")
+##
+#func AttScores() -> void:
+	#if TextScore:
+		#var pontos = GameManager.GetScore()
+		#TextScore.text = "Pontos: " + str(pontos)
+		#print("HUD atualizado: Pontos = ", pontos)
 func AttHp(hpNow: int)-> void:
 	for i in range(hpNodesArray.size()):
 		var nodeHpX: Control = hpNodesArray[i]

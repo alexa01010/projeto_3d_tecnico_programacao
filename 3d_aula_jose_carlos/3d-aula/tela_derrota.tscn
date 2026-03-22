@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://dlio6fforgrp2" path="res://universfield-game-bonus-03-487857 (1).mp3" id="2_6l0yx"]
 [ext_resource type="Texture2D" uid="uid://bkw4xvlde36x6" path="res://rogland_clear_night_4k.exr" id="2_wodfv"]
 [ext_resource type="Texture2D" uid="uid://tox7405gx36d" path="res://3D/modelos/buddybuddy_Buddytex.png" id="4_wodfv"]
+[ext_resource type="AudioStream" uid="uid://c46tuvwe8nnov" path="res://sons/Sad Emotional Piano Music - Background Music (HD) - Gaming Sound FX (youtube).mp3" id="5_qid2u"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qid2u"]
 panorama = ExtResource("2_wodfv")
@@ -1767,6 +1768,16 @@ _data = {
 [node name="Node3D" type="Node3D" unique_id=1124942118 groups=["player"]]
 script = ExtResource("1_pm3wf")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1575390894]
+z_index = -2
+z_as_relative = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.7254902, 0.7294118, 0.16862746)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1443952302]
 environment = SubResource("Environment_kkw63")
 
@@ -1943,15 +1954,10 @@ skin = SubResource("Skin_xb3ax")
 libraries/ = SubResource("AnimationLibrary_3uvvv")
 autoplay = &"Death2"
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1575390894]
-z_index = -2
-z_as_relative = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0.7254902, 0.7294118, 0.16862746)
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1402177174]
+stream = ExtResource("5_qid2u")
+volume_db = -3.792
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/menu" to="." method="_on_menu_pressed"]

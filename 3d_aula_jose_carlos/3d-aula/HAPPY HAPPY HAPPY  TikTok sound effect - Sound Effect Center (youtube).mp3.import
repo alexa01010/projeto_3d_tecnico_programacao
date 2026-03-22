@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3sjj6r3mes6w"
+path="res://.godot/imported/HAPPY HAPPY HAPPY  TikTok sound effect - Sound Effect Center (youtube).mp3-7b11916550254eccf1dd2c93bb045b78.mp3str"
+
+[deps]
+
+source_file="res://HAPPY HAPPY HAPPY  TikTok sound effect - Sound Effect Center (youtube).mp3"
+dest_files=["res://.godot/imported/HAPPY HAPPY HAPPY  TikTok sound effect - Sound Effect Center (youtube).mp3-7b11916550254eccf1dd2c93bb045b78.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

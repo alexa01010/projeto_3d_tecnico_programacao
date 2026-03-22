@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://mquip18dfsod"]
+
+[ext_resource type="Script" uid="uid://02duugtqtok4" path="res://tutorial.gd" id="1_7n6eb"]
+[ext_resource type="AudioStream" uid="uid://b4e0q6wsrlc0g" path="res://Bla Bla Bla Ble Ble Ble Blu Blu Blu - Meme Sound Effect - Sound God (youtube).mp3" id="2_yb1ct"]
+
+[sub_resource type="Animation" id="Animation_yb1ct"]
+resource_name = "tutorial"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Tutorial
+MOVIMENTAÇÃO AWSD
+PULAR - ESPAÇO
+ATACAR - LADO ESQUERDO DO MOUSE
+PAUSAR JOGO - ESC
+"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5.9666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"mudar_cena"
+}]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [],
+"times": PackedFloat32Array()
+}
+tracks/3/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ehuit"]
+_data = {
+&"tutorial": SubResource("Animation_yb1ct")
+}
+
+[node name="Control" type="Control" unique_id=1971443042]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7n6eb")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=42219463]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=638851132]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 48.0
+offset_right = 240.0
+offset_bottom = 201.0
+text = "Tutorial
+MOVIMENTAÇÃO AWSD
+PULAR - ESPAÇO
+ATACAR - LADO ESQUERDO DO MOUSE
+PAUSAR JOGO - ESC
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1911020448 groups=["player"]]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=706113450]
+libraries/ = SubResource("AnimationLibrary_ehuit")
+autoplay = &"tutorial"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2055701750]
+stream = ExtResource("2_yb1ct")
+autoplay = true

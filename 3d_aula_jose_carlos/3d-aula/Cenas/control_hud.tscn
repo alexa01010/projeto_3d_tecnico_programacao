@@ -14,12 +14,14 @@ hpNodesArray = [NodePath("HBoxContainer/TextureRect"), NodePath("HBoxContainer/T
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1002851542]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -20.0
-offset_right = 68.0
-grow_vertical = 2
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 25.0
+offset_top = 2.0
+offset_right = 167.0
+offset_bottom = 22.0
+grow_horizontal = 2
 scale = Vector2(1.22, 1.22)
 metadata/_edit_group_ = true
 
@@ -55,6 +57,7 @@ texture = ExtResource("2_ho54m")
 expand_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=319532181]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -74,6 +77,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="." unique_id=1169447113]
+visible = false
 layout_mode = 0
 offset_left = 218.0
 offset_top = 6.0

@@ -19,6 +19,7 @@ func _on_body_entered(body: Node3D) -> void:
 
 func _on_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player") and pedras_caindo == false:
-		animation_player.play("caindo")
-	elif ja_passou == true:
-		pass
+		animation_player.play("caido")
+	#elif ja_passou == true:
+		#animation_player.play("caido")
+		#pass

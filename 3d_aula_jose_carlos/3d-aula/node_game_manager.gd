@@ -20,12 +20,22 @@ func _ready() -> void:
 	SavePosPLayer = player_node.global_position
 #
 
-static func AddScore(add:int)-> void:
-	GameManagerInScene.score += add
-	HudNode.HudInScene.AttScores()
 
-static func GetScore()-> int:
-	return GameManagerInScene.score
+static func AddScore(add: int) -> void:
+	if GameManagerInScene:
+		GameManagerInScene.score += add
+		print("Pontos adicionados: ", add, " Total: ", GameManagerInScene.score)
+		
+		# Atualiza o HUD
+		if HudNode.HudInScene:
+			HudNode.HudInScene.AttScores()
+		else:
+			print("ERRO: HudNode.HudInScene não encontrado!")
+
+static func GetScore() -> int:
+	if GameManagerInScene:
+		return GameManagerInScene.score
+	return 0
 
 func AddLife(add : int) -> void:
 	GameManagerInScene.hpPlayer += add
@@ -33,6 +43,8 @@ func AddLife(add : int) -> void:
 	if GameManagerInScene.hpPlayer <= 0:
 		audio_stream_player.play()
 		GameManagerInScene.player_node.morte()
+		await get_tree().create_timer(1.0).timeout
+		get_tree().change_scene_to_file("res://tela_derrota.tscn")
 		return
 		
 static func RestartPlayerPos()-> void:

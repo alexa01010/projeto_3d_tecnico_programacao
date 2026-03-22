@@ -2538,7 +2538,7 @@ layout_mode = 2
 text = "SAIR"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=844838248]
-transform = Transform3D(-0.04219421, 0.010940731, 0.99904954, -0.029340938, 0.9994952, -0.012184807, -0.99867857, -0.029827178, -0.0418519, -5.591018, 1.8201652, 1.6294861)
+transform = Transform3D(-0.042194154, 0.010940732, 0.99904954, -0.029340938, 0.99949527, -0.012184807, -0.9986785, -0.029827176, -0.041851845, -4.5070496, 1.8201652, 1.6294861)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1087415078]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.573402, 4.46949, -0.3594663)
@@ -2576,6 +2576,24 @@ skeleton = NodePath("")
 
 [node name="Grama3" type="MeshInstance3D" parent="." unique_id=754634876]
 transform = Transform3D(3.5762787e-07, -0.99999994, 0, 0.99999994, 3.5762787e-07, 0, 0, 0, 1, -15.405452, -0.6221614, 6.0410023)
+mesh = SubResource("ArrayMesh_1dj7r")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ORMMaterial3D_gsqm0")
+
+[node name="Grama15" type="MeshInstance3D" parent="." unique_id=618027001]
+transform = Transform3D(3.5762787e-07, -0.99999994, 0, 0.99999994, 3.5762787e-07, 0, 0, 0, 1, -9.161104, -0.91007185, 2.3683372)
+mesh = SubResource("ArrayMesh_1dj7r")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ORMMaterial3D_gsqm0")
+
+[node name="Grama16" type="MeshInstance3D" parent="." unique_id=830005949]
+transform = Transform3D(2.8723358e-07, -0.915, 0, 0.915, 2.8723358e-07, 0, 0, 0, 0.915, -11.319534, -0.91007185, -2.0121903)
+mesh = SubResource("ArrayMesh_1dj7r")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ORMMaterial3D_gsqm0")
+
+[node name="Grama17" type="MeshInstance3D" parent="." unique_id=1152497671]
+transform = Transform3D(2.8723358e-07, -0.915, 0, 0.915, 2.8723358e-07, 0, 0, 0, 0.915, -13.055683, -0.91007185, 4.0190864)
 mesh = SubResource("ArrayMesh_1dj7r")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ORMMaterial3D_gsqm0")
@@ -2663,8 +2681,8 @@ bones/0/name = "pelvis"
 bones/0/parent = -1
 bones/0/rest = Transform3D(0, 0, -1, 0, -0.99999994, 0, -1, 0, 0, 0, -0.8237712, 0)
 bones/0/enabled = true
-bones/0/position = Vector3(0, -0.82377124, 0)
-bones/0/rotation = Quaternion(0.7071068, 0, -0.7071068, 0)
+bones/0/position = Vector3(0, -1.6878546, 0)
+bones/0/rotation = Quaternion(0.6520508, -0.27355033, -0.6520508, 0.27355027)
 bones/0/scale = Vector3(1, 0.99999994, 1)
 bones/1/name = "virilha.r"
 bones/1/parent = 0
@@ -2678,21 +2696,21 @@ bones/2/parent = 1
 bones/2/rest = Transform3D(1, 1.338947e-07, 3.1373926e-08, -4.2384904e-08, 0.083045475, 0.9965458, 1.3082675e-07, -0.99654573, 0.08304548, 0, 0.3976827, -1.1920929e-07)
 bones/2/enabled = true
 bones/2/position = Vector3(0, 0.3976827, -1.1920929e-07)
-bones/2/rotation = Quaternion(-0.6771095, -3.378694e-08, -5.9887164e-08, 0.7358823)
+bones/2/rotation = Quaternion(-0.67090636, 0.3408678, 0.1383498, 0.643858)
 bones/2/scale = Vector3(1, 0.99999994, 1)
 bones/3/name = "peA.r"
 bones/3/parent = 2
 bones/3/rest = Transform3D(0.13356425, -0.9909924, -0.009723446, 0.9909925, 0.13345511, 0.011121515, -0.009723694, -0.011121297, 0.99989086, 4.7961635e-14, 0.68410456, -2.9802319e-08)
 bones/3/enabled = true
 bones/3/position = Vector3(4.7961635e-14, 0.68410456, -2.9802319e-08)
-bones/3/rotation = Quaternion(-0.0073865675, 8.562468e-08, 0.65819293, 0.75281304)
+bones/3/rotation = Quaternion(-0.0073865717, 7.891237e-08, 0.65819293, 0.75281304)
 bones/3/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/4/name = "peB.r"
 bones/4/parent = 3
 bones/4/rest = Transform3D(0.9841531, -0.17731674, 0.0011536462, 0.17731676, 0.9840691, -0.0129085705, 0.0011536384, 0.01290857, 0.999916, -7.450581e-09, 0.7070478, 4.8428774e-08)
 bones/4/enabled = true
 bones/4/position = Vector3(-7.450581e-09, 0.7070478, 4.8428774e-08)
-bones/4/rotation = Quaternion(0.0064801453, 3.701397e-09, 0.089013614, 0.99600935)
+bones/4/rotation = Quaternion(0.006480161, 5.12141e-09, 0.089013614, 0.99600935)
 bones/4/scale = Vector3(0.9999999, 0.99999994, 1)
 bones/5/name = "virilha.l"
 bones/5/parent = 0
@@ -2706,27 +2724,27 @@ bones/6/parent = 5
 bones/6/rest = Transform3D(1, -9.033434e-08, -3.5003964e-08, 4.23849e-08, 0.083045244, 0.99654585, -8.711538e-08, -0.99654585, 0.083045244, -7.1054274e-15, 0.3976827, 0)
 bones/6/enabled = true
 bones/6/position = Vector3(-7.1054274e-15, 0.3976827, 0)
-bones/6/rotation = Quaternion(-0.6771096, 1.770372e-08, 4.5088473e-08, 0.7358822)
+bones/6/rotation = Quaternion(-0.67113656, -0.3932237, -0.114386514, 0.61795366)
 bones/6/scale = Vector3(1, 1, 1)
 bones/7/name = "peA.l"
 bones/7/parent = 6
 bones/7/rest = Transform3D(0.13356425, 0.9909924, 0.009723525, -0.9909925, 0.13345511, 0.011120941, 0.009723114, -0.011121299, 0.99989086, 1.5987212e-14, 0.6841046, 1.4901165e-08)
 bones/7/enabled = true
 bones/7/position = Vector3(1.5987212e-14, 0.6841046, 1.4901165e-08)
-bones/7/rotation = Quaternion(-0.0073863775, 1.3382791e-07, -0.65819293, 0.75281304)
+bones/7/rotation = Quaternion(-0.007386372, 1.3586359e-07, -0.65819293, 0.75281304)
 bones/7/scale = Vector3(1, 0.99999994, 0.99999994)
 bones/8/name = "peB.l"
 bones/8/parent = 7
 bones/8/rest = Transform3D(0.9841531, 0.17731677, -0.0011537663, -0.17731677, 0.9840691, -0.012908655, -0.0011535353, 0.012908675, 0.999916, -8.195639e-08, 0.70704776, 4.33065e-08)
 bones/8/enabled = true
 bones/8/position = Vector3(-8.195639e-08, 0.70704776, 4.33065e-08)
-bones/8/rotation = Quaternion(0.0064801937, -5.7833113e-08, -0.08901362, 0.99600935)
+bones/8/rotation = Quaternion(0.0064802067, -6.5304484e-08, -0.089013614, 0.99600935)
 bones/8/scale = Vector3(0.9999999, 0.99999994, 1)
 bones/9/name = "cintura"
 bones/9/parent = -1
 bones/9/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8237712, 0)
 bones/9/enabled = true
-bones/9/position = Vector3(0, -0.8237712, 0)
+bones/9/position = Vector3(0, -1.6878545, 0)
 bones/9/rotation = Quaternion(0, 0, 0, 1)
 bones/9/scale = Vector3(1, 1, 1)
 bones/10/name = "peito"
@@ -2748,52 +2766,52 @@ bones/12/parent = 11
 bones/12/rest = Transform3D(1, 0, 2.3841855e-07, 0, 1, 0, -2.3841855e-07, 0, 1, 0, 0.20000005, 0)
 bones/12/enabled = true
 bones/12/position = Vector3(0, 0.20000005, 0)
-bones/12/rotation = Quaternion(0, 1.19209275e-07, 0, 1)
+bones/12/rotation = Quaternion(-9.5585655e-09, 1.08052134e-07, 0.08018307, 0.99678016)
 bones/12/scale = Vector3(1, 1, 1)
 bones/13/name = "braco.r"
 bones/13/parent = 10
 bones/13/rest = Transform3D(-0.549561, -0.8354536, 5.7166407e-08, 0.8354536, -0.549561, -1.3198903e-07, 1.4168714e-07, -2.4776138e-08, 1, 0, 0.6000001, 0)
 bones/13/enabled = true
 bones/13/position = Vector3(0, 0.6000001, 0)
-bones/13/rotation = Quaternion(5.6478605e-08, -4.452462e-08, 0.8802162, 0.474573)
+bones/13/rotation = Quaternion(4.0918238e-08, -4.508854e-08, 0.95620126, 0.2927102)
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/name = "mao.r"
 bones/14/parent = 13
 bones/14/rest = Transform3D(0.97339505, -0.22913332, -2.3441346e-07, 0.22913332, 0.97339505, -1.3673112e-07, 2.5950655e-07, 7.938146e-08, 1, 7.450578e-09, 0.8215614, -1.7763568e-15)
 bones/14/enabled = true
 bones/14/position = Vector3(7.450578e-09, 0.8215614, -1.7763568e-15)
-bones/14/rotation = Quaternion(5.43911e-08, -1.2430958e-07, 0.11533636, 0.9933265)
-bones/14/scale = Vector3(1, 0.99999994, 1)
+bones/14/rotation = Quaternion(4.0948187e-08, -1.3218067e-07, 0.032241426, 0.9994801)
+bones/14/scale = Vector3(0.9999998, 0.9999998, 1)
 bones/15/name = "braco.l"
 bones/15/parent = 10
 bones/15/rest = Transform3D(-0.549561, 0.8354536, -5.7166407e-08, -0.8354536, -0.549561, -1.3198903e-07, -1.4168714e-07, -2.4776138e-08, 1, 0, 0.6000001, 0)
 bones/15/enabled = true
 bones/15/position = Vector3(0, 0.6000001, 0)
-bones/15/rotation = Quaternion(-5.6478605e-08, -4.452462e-08, 0.8802162, -0.474573)
+bones/15/rotation = Quaternion(-4.16823e-08, -4.5101253e-08, 0.9534728, -0.30147916)
 bones/15/scale = Vector3(1, 1, 1)
 bones/16/name = "mao.l"
 bones/16/parent = 15
 bones/16/rest = Transform3D(0.97339505, 0.22913332, 2.3441346e-07, -0.22913332, 0.97339505, -1.3673112e-07, -2.5950655e-07, 7.938146e-08, 1, -7.450578e-09, 0.8215614, -1.7763568e-15)
 bones/16/enabled = true
 bones/16/position = Vector3(-7.450578e-09, 0.8215614, -1.7763568e-15)
-bones/16/rotation = Quaternion(5.43911e-08, 1.2430958e-07, -0.11533636, 0.9933265)
+bones/16/rotation = Quaternion(3.958601e-08, 1.3291859e-07, -0.023905724, 0.99971426)
 bones/16/scale = Vector3(1, 0.99999994, 1)
 
 [node name="Buddy" type="MeshInstance3D" parent="buddybuddy/Armação/Skeleton3D" unique_id=500103717]
-transform = Transform3D(1.0000002, 0, 1.1920929e-07, 0, 1, 0, -1.1920929e-07, 0, 1.0000002, -0.32212067, -0.6177473, 0.10354233)
+transform = Transform3D(1.0000004, 0, 1.1920929e-07, 0, 1.0000012, 0, -1.1920929e-07, 0, 1.0000004, -0.04200363, -0.61774766, 0.88083935)
 mesh = SubResource("ArrayMesh_5r7qk")
 skin = SubResource("Skin_xb3ax")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="buddybuddy" unique_id=419331040]
 libraries/ = SubResource("AnimationLibrary_tgnqs")
-autoplay = &"Attack"
+autoplay = &"Seat"
 speed_scale = 1.6
 
 [node name="GATO" type="Node3D" parent="." unique_id=2072290856]
 transform = Transform3D(0.98379755, 0, -0.17928301, 0, 1, 0, 0.17928301, 0, 0.98379755, 0, 0, 2.0907402)
 
 [node name="Cube" type="MeshInstance3D" parent="GATO" unique_id=1420505461]
-transform = Transform3D(0.5676674, 0.09921943, 1.1837115, -0.24000424, 1.221203, 0, -1.1638906, -0.20342998, 0.5773347, -11.591167, -2.0809395, -1.5733246)
+transform = Transform3D(0.5676674, 0.099219404, 1.1837121, -0.24000424, 1.2212027, 0, -1.1638906, -0.20342994, 0.577335, -9.720622, -2.092181, 0.2743628)
 mesh = SubResource("ArrayMesh_iui6d")
 skeleton = NodePath("")
 
@@ -2829,6 +2847,207 @@ texture = ExtResource("10_k1kmp")
 [node name="clck" type="AudioStreamPlayer" parent="." unique_id=1912173238]
 stream = ExtResource("11_pklsx")
 bus = &"SFX"
+
+[node name="vagalue" type="CSGSphere3D" parent="." unique_id=678760612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.026075, -1.8538249, 0)
+radius = 0.195
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="vagalue" unique_id=1606555781]
+transform = Transform3D(0.64629716, 0.76308584, 0, -0.76308584, 0.64629716, 0, 0, 0, 1, 0, 0.4304515, 0)
+light_color = Color(0.53144604, 0.6918659, 1.92523e-07, 1)
+light_energy = 16.0
+light_specular = 13.04
+omni_range = 0.365
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="vagalue" unique_id=1397759461]
+transform = Transform3D(0.64629716, 0.76308584, 0, -0.76308584, 0.64629716, 0, 0, 0, 1, 0, 0.85170233, -1.9074702)
+light_color = Color(0.53144604, 0.6918659, 1.92523e-07, 1)
+light_energy = 16.0
+light_specular = 13.04
+omni_range = 0.365
+
+[node name="vagalue2" type="CSGSphere3D" parent="." unique_id=9828391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.026075, -1.8538249, 2.5843296)
+radius = 0.195
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="vagalue2" unique_id=1106394171]
+transform = Transform3D(0.64629716, 0.76308584, 0, -0.76308584, 0.64629716, 0, 0, 0, 1, 0, 0.4304515, 0)
+light_color = Color(0.53144604, 0.6918659, 1.92523e-07, 1)
+light_energy = 16.0
+light_specular = 13.04
+omni_range = 0.365
+
+[node name="vagalue3" type="CSGSphere3D" parent="." unique_id=518386796]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.72554, -1.8538249, 2.5843296)
+radius = 0.195
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="vagalue3" unique_id=1458416018]
+transform = Transform3D(0.64629716, 0.76308584, 0, -0.76308584, 0.64629716, 0, 0, 0, 1, 0, 0.4304515, 0)
+light_color = Color(0.53144604, 0.6918659, 1.92523e-07, 1)
+light_energy = 16.0
+light_specular = 13.04
+omni_range = 0.365
+
+[node name="vagalue4" type="CSGSphere3D" parent="." unique_id=1210031591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.72554, -1.8538249, -2.7529478)
+radius = 0.195
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="vagalue4" unique_id=1317812893]
+transform = Transform3D(0.64629716, 0.76308584, 0, -0.76308584, 0.64629716, 0, 0, 0, 1, 0, 0.4304515, 0)
+light_color = Color(0.53144604, 0.6918659, 1.92523e-07, 1)
+light_energy = 16.0
+light_specular = 13.04
+omni_range = 0.365
+
+[node name="vagalue5" type="CSGSphere3D" parent="." unique_id=1258920237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.812302, -1.8538249, -2.7529478)
+radius = 0.195
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="vagalue5" unique_id=411695648]
+transform = Transform3D(0.64629716, 0.76308584, 0, -0.76308584, 0.64629716, 0, 0, 0, 1, 0, 0.4304515, 0)
+light_color = Color(0.53144604, 0.6918659, 1.92523e-07, 1)
+light_energy = 16.0
+light_specular = 13.04
+omni_range = 0.365
+
+[node name="vagalue6" type="CSGSphere3D" parent="." unique_id=680088305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.812302, -1.8538249, -0.09745216)
+radius = 0.195
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="vagalue6" unique_id=1219639547]
+transform = Transform3D(0.64629716, 0.76308584, 0, -0.76308584, 0.64629716, 0, 0, 0, 1, 0, 0.4304515, 0)
+light_color = Color(0.53144604, 0.6918659, 1.92523e-07, 1)
+light_energy = 16.0
+light_specular = 13.04
+omni_range = 0.365
+
+[node name="vagalue7" type="CSGSphere3D" parent="." unique_id=1553825003]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.549507, -1.8538249, 2.5445457)
+radius = 0.195
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="vagalue7" unique_id=705542889]
+transform = Transform3D(0.64629716, 0.76308584, 0, -0.76308584, 0.64629716, 0, 0, 0, 1, 0, 0.4304515, 0)
+light_color = Color(0.53144604, 0.6918659, 1.92523e-07, 1)
+light_energy = 16.0
+light_specular = 13.04
+omni_range = 0.365
+
+[node name="vagalue8" type="CSGSphere3D" parent="." unique_id=1587445237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.591152, -1.8538249, -0.85226345)
+radius = 0.195
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="vagalue8" unique_id=240093317]
+transform = Transform3D(0.64629716, 0.76308584, 0, -0.76308584, 0.64629716, 0, 0, 0, 1, 0, 0.4304515, 0)
+light_color = Color(0.53144604, 0.6918659, 1.92523e-07, 1)
+light_energy = 16.0
+light_specular = 13.04
+omni_range = 0.365
+
+[node name="vagalue9" type="CSGSphere3D" parent="." unique_id=1621085213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.591152, -1.8538249, 0.8646908)
+radius = 0.195
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="vagalue9" unique_id=726769098]
+transform = Transform3D(0.64629716, 0.76308584, 0, -0.76308584, 0.64629716, 0, 0, 0, 1, 0, 0.4304515, 0)
+light_color = Color(0.53144604, 0.6918659, 1.92523e-07, 1)
+light_energy = 16.0
+light_specular = 13.04
+omni_range = 0.365
+
+[node name="vagalue10" type="CSGSphere3D" parent="." unique_id=707483242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.460804, -1.8538249, 0.8646908)
+radius = 0.195
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="vagalue10" unique_id=1228988424]
+transform = Transform3D(0.64629716, 0.76308584, 0, -0.76308584, 0.64629716, 0, 0, 0, 1, 0, 0.4304515, 0)
+light_color = Color(0.53144604, 0.6918659, 1.92523e-07, 1)
+light_energy = 16.0
+light_specular = 13.04
+omni_range = 0.365
+
+[node name="vagalue11" type="CSGSphere3D" parent="." unique_id=1628810899]
+transform = Transform3D(0.13415909, 0.9909598, 0, -0.9909598, 0.13415909, 0, 0, 0, 1, -10.460804, 0.78947663, 0.8646908)
+radius = 0.195
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="vagalue11" unique_id=1983317131]
+transform = Transform3D(0.64629716, 0.76308584, 0, -0.76308584, 0.64629716, 0, 0, 0, 1, 0, 0.4304515, 0)
+light_color = Color(0.1339078, 0.49090415, 0.5652245, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 6.303
+light_size = 1.0
+light_specular = 16.0
+omni_range = 0.365
+
+[node name="vagalue12" type="CSGSphere3D" parent="." unique_id=213867790]
+transform = Transform3D(0.13415909, 0.9909598, 0, -0.9909598, 0.13415909, 0, 0, 0, 1, -13.795233, 3.3921177, 3.17022)
+radius = 0.195
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="vagalue12" unique_id=280751032]
+transform = Transform3D(0.64629716, 0.76308584, 0, -0.76308584, 0.64629716, 0, 0, 0, 1, 0, 0.4304515, 0)
+light_color = Color(0.1339078, 0.49090415, 0.5652245, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 6.303
+light_size = 1.0
+light_specular = 16.0
+omni_range = 0.365
+
+[node name="vagalue13" type="CSGSphere3D" parent="." unique_id=1763318638]
+transform = Transform3D(0.13415909, 0.9909598, 0, -0.9909598, 0.13415909, 0, 0, 0, 1, -13.795233, 3.3921177, -2.7219625)
+radius = 0.195
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="vagalue13" unique_id=1802509826]
+transform = Transform3D(0.64629716, 0.76308584, 0, -0.76308584, 0.64629716, 0, 0, 0, 1, 0, 0.4304515, 0)
+light_color = Color(0.1339078, 0.49090415, 0.5652245, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 6.303
+light_size = 1.0
+light_specular = 16.0
+omni_range = 0.365
+
+[node name="vagalue14" type="CSGSphere3D" parent="." unique_id=771385761]
+transform = Transform3D(0.053663637, 0.39638394, 0, -0.39638394, 0.053663637, 0, 0, 0, 0.4, -13.795233, 2.5166457, 7.085377)
+radius = 0.195
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="vagalue14" unique_id=2015692535]
+transform = Transform3D(0.64629716, 0.76308584, 0, -0.76308584, 0.64629716, 0, 0, 0, 1, 0, 0.4304515, 0)
+light_color = Color(0.1339078, 0.49090415, 0.5652245, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 6.303
+light_size = 1.0
+light_specular = 16.0
+omni_range = 0.365
+
+[node name="vagalue15" type="CSGSphere3D" parent="." unique_id=1659452155]
+transform = Transform3D(0.053663637, 0.39638394, 0, -0.39638394, 0.053663637, 0, 0, 0, 0.4, -13.795233, 2.5166457, 0.05089426)
+radius = 0.195
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="vagalue15" unique_id=1773749387]
+transform = Transform3D(0.64629716, 0.76308584, 0, -0.76308584, 0.64629716, 0, 0, 0, 1, 0, 0.4304515, 0)
+light_color = Color(0.1339078, 0.49090415, 0.5652245, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 6.303
+light_size = 1.0
+light_specular = 16.0
+omni_range = 0.365
+
+[node name="vagalue16" type="CSGSphere3D" parent="." unique_id=476200288]
+transform = Transform3D(0.08250784, 0.6094403, 0, -0.6094403, 0.08250784, 0, 0, 0, 0.615, -13.795233, -1.0570056, -3.1779037)
+radius = 0.195
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="vagalue16" unique_id=1049889836]
+transform = Transform3D(0.64629716, 0.76308584, 0, -0.76308584, 0.64629716, 0, 0, 0, 1, 0, 0.4304515, 0)
+light_color = Color(0.1339078, 0.49090415, 0.5652245, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_volumetric_fog_energy = 6.303
+light_size = 1.0
+light_specular = 16.0
+omni_range = 0.365
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

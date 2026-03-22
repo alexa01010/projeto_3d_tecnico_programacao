@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://casi7ow3ku01y"]
+
+[ext_resource type="Script" uid="uid://bvlalena0bxtx" path="res://magica.gd" id="1_mqwma"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t6jcv"]
+
+[node name="magica" type="Area3D" unique_id=1183851692 groups=["magica"]]
+script = ExtResource("1_mqwma")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=389084096]
+shape = SubResource("SphereShape3D_t6jcv")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="." unique_id=894638000]
+radius = 0.29645696
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CSGSphere3D" unique_id=1438134585]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6279714, 0)
+light_color = Color(0, 0.5315595, 0.5318269, 1)
+light_energy = 12.596
+light_indirect_energy = 5.404
+light_volumetric_fog_energy = 10.438
+light_specular = 9.219
+omni_range = 0.6921271
+omni_attenuation = 10.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="CSGSphere3D" unique_id=1401504438]
+transform = Transform3D(-0.4969801, 0.690214, -0.52594244, -0.7235855, 0.0049361074, 0.6902172, 0.47899365, 0.7235885, 0.4969756, -0.7875492, -0.21449518, 0)
+light_color = Color(0, 0.5315595, 0.5318269, 1)
+light_energy = 12.596
+light_indirect_energy = 5.404
+light_volumetric_fog_energy = 10.438
+light_specular = 9.219
+omni_range = 0.6921271
+omni_attenuation = 10.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="CSGSphere3D" unique_id=1476286332]
+transform = Transform3D(-0.4969801, 0.690214, -0.52594244, -0.7235855, 0.0049361074, 0.6902172, 0.47899365, 0.7235885, 0.4969756, 0.0057757497, -0.21449518, 0.6247219)
+light_color = Color(0, 0.5315595, 0.5318269, 1)
+light_energy = 12.596
+light_indirect_energy = 5.404
+light_volumetric_fog_energy = 10.438
+light_specular = 9.219
+omni_range = 0.6921271
+omni_attenuation = 10.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="CSGSphere3D" unique_id=941421399]
+transform = Transform3D(-0.4969801, 0.690214, -0.52594244, -0.7235855, 0.0049361074, 0.6902172, 0.47899365, 0.7235885, 0.4969756, 0.677799, -0.21449518, 0.17310798)
+light_color = Color(0, 0.5315595, 0.5318269, 1)
+light_energy = 12.596
+light_indirect_energy = 5.404
+light_volumetric_fog_energy = 10.438
+light_specular = 9.219
+omni_range = 0.6921271
+omni_attenuation = 10.0
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="CSGSphere3D" unique_id=1211553037]
+transform = Transform3D(-0.4969801, 0.690214, -0.52594244, -0.7235855, 0.0049361074, 0.6902172, 0.47899365, 0.7235885, 0.4969756, 0.063854575, -0.21449518, -0.75362504)
+light_color = Color(0, 0.5315595, 0.5318269, 1)
+light_energy = 12.596
+light_indirect_energy = 5.404
+light_volumetric_fog_energy = 10.438
+light_specular = 9.219
+omni_range = 0.6921271
+omni_attenuation = 10.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

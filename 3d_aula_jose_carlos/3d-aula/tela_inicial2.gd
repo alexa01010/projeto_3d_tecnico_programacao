@@ -23,7 +23,7 @@ func _on_button_pressed() -> void:
 	clck.play()
 	animation_player.play("Jump")
 	await get_tree().create_timer(0.6).timeout
-	get_tree().change_scene_to_file("res://Cenas/CENAS/fase_1.tscn")
+	get_tree().change_scene_to_file("res://tutorial.tscn")
 
 
 func _on_button_2_pressed() -> void:

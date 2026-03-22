@@ -654,7 +654,8 @@ debug_color = Color(0.83425814, 0.38499072, 0.16517556, 0.41960785)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2058621855]
 stream = ExtResource("3_qtwn3")
-volume_db = -28.028
+volume_db = -18.82
+stream_paused = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1091023150]
 stream = ExtResource("4_shuym")
